@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.israelfelix.workshopmongo.domain.User;
+import com.israelfelix.workshopmongo.dto.UserDTO;
 import com.israelfelix.workshopmongo.repository.UserRepository;
 
 @Service
@@ -19,4 +20,11 @@ public class UserService {
 	}
 	
 
+	public User insert(User obj) {
+		return repo.insert(obj);
+	}
+	
+	public User fromDTO(UserDTO objDto) {
+		return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
+	}
 }
