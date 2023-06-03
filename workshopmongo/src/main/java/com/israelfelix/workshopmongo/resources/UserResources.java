@@ -26,4 +26,7 @@ public class UserResources {
 		List<UserDTO> listDto = list.stream().map(x -> new UserDTO(x)).collect(Collectors.toList());
 		return ResponseEntity.ok(listDto);
 	}
+	
+	
+	
 }
